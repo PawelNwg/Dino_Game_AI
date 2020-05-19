@@ -43,15 +43,19 @@ namespace Dino
 
             if (jumping == true)
             {
-                jumpSpeed = -12;
+                jumpSpeed = -18; //skok 
                 force -= 1;
+                if (Dino.Top < 250) // limit skoku 
+                {
+                    jumping = false;
+                }
             }
             else
             {
-                jumpSpeed = 12;
+                jumpSpeed = 14; // moc grawitacji
             }
 
-            if (Dino.Top > 369 && jumping == false)
+            if (Dino.Top > 369 && jumping == false) // pozycjonowanie na ziemi 
             {
                 force = 12;
                 Dino.Top = 370;
